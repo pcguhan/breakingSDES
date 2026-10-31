@@ -17,6 +17,7 @@ The result is a complete emulator that reproduces the cipher's behavior on all 2
 |---|---|
 | `sdes_enc_dec.py` | Reference S-DES implementation (key schedule, Feistel rounds, encryption/decryption). |
 | `adaptive_breaker.py` | The attack: Phase 1 sweep, Phase 2 adaptive forge, emulator construction, and full 256-plaintext verification. |
+| `leanProof.lean` | Lean model and symbolic proof of attack correctness for arbitrary S-box functions and explicit eight-bit subkeys. |
 
 ## Requirements
 
@@ -40,7 +41,8 @@ This will:
 
 ## Notes on the Reference Implementation
 
-- `sdes_enc_dec.py` includes a hardcoded key substitution: if the supplied key is `"0000000000"`, it is replaced with a fixed non-trivial master key before encryption. This exists purely for testing convenience and has no bearing on the attack's key-independence — the attack never inspects, computes, or relies on the key value at any stage.
+- Encryption and decryption use the supplied key directly, including the all-zero key. The attack demonstration queries the all-zero key.
+- The Lean proof applies to the Lean cipher and attack models; correspondence with the Python implementation is not formally proved. The Python and Lean cipher implementations both use the supplied master key directly, but that alignment alone is not a proof that the implementations agree.
 - The `S0` and `S1` tables in `sdes_enc_dec.py` can be freely modified. The attack is agnostic to the specific S-box values used; it recovers the *effective* table for whatever S-boxes are configured, standard or otherwise.
 
 ## Reproducing the Paper's Complexity Claims

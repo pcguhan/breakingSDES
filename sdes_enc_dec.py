@@ -1,6 +1,4 @@
 def sdes_encrypt(key, plaintext):
-    if key == "0000000000":
-        key = "1111111111" #master key, change for testing
     return _sdes(key, plaintext, encrypt=True)
 
 def sdes_decrypt(key, ciphertext):

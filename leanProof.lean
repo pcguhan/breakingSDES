@@ -1,6 +1,7 @@
 /-!
 # S-DES: key-independent structural recovery, formalized in Lean 4
-Mirrors sdes_enc_dec.py (cipher) and adaptive_breaker.py (attack).
+Models the cipher and attack in sdes_enc_dec.py and adaptive_breaker.py.
+Correspondence with the Python implementations is not formally proved.
 No Mathlib required (Lean core only).
 -/
 
