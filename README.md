@@ -1,6 +1,6 @@
 # S-DES Global Deduction Attack
 
-Reference implementation of Simplified DES (S-DES) and an adaptive chosen-plaintext attack that fully determinizes the cipher's input–output behavior without recovering the secret key. This repository accompanies the preprint *"Key-Independent Structural Recovery of the S-DES Cipher via Adaptive Chosen-Plaintext Queries."*
+Reference implementation of Simplified DES (S-DES) and an adaptive chosen-plaintext attack that fully determinizes the cipher's input–output behavior without recovering the secret key. This repository accompanies the preprint available at [10.13140/RG.2.2.12444.04485](https://doi.org/10.13140/RG.2.2.12444.04485) *"Key-Independent Structural Recovery of the S-DES Cipher via Adaptive Chosen-Plaintext Queries."*
 
 ## Overview
 
