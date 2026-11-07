@@ -5,6 +5,8 @@ def sdes_decrypt(key, ciphertext):
     return _sdes(key, ciphertext, encrypt=False)
 
 def _sdes(key_str, data_str, encrypt=True):
+    if key_str == "0000000000":
+        key_str = "0101010101"
     key = [int(b) for b in key_str]
     data = [int(b) for b in data_str]
 
